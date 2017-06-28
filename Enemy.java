@@ -1,22 +1,30 @@
-
+import java.util.*;
 /**
  * Write a description of class Enemy here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Colin) 
+ * @version (28.06.2017)
  */
 public class Enemy
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private String name;
+    private String description;
+    private int hitPoints;
+    private int minDamage;
+    private int maxDamage;
+    private static Random random = new Random();
 
     /**
      * Constructor for objects of class Enemy
      */
-    public Enemy()
+    public Enemy(String name, String description, int hitPoints, int minDamage, int maxDamage)
     {
-        // initialise instance variables
-        x = 0;
+       this.name = name;
+       this.description = description;
+       this.minDamage = minDamage;
+       this.maxDamage = maxDamage;
+       this.hitPoints = hitPoints;
+      
     }
 
     /**
@@ -25,9 +33,8 @@ public class Enemy
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public int sampleMethod(int y)
+    //public int sampleMethod(int y)
     {
-        // put your code here
-        return x + y;
+        
     }
 }
