@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=DataManagement()
+comment1.params=data\ filename
+comment1.target=boolean\ saveData(java.lang.Object,\ java.lang.String)
+comment2.params=filename
+comment2.target=java.lang.Object\ readData(java.lang.String)
+numComments=3

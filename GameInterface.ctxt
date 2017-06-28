@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=GameInterface()
+comment1.params=
+comment1.target=void\ Start()
+comment2.params=input
+comment2.target=void\ processInput(java.lang.String)
+numComments=3

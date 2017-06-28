@@ -1,4 +1,7 @@
-
+import java.util.*;
+import java.io.*;
+import java.nio.file.*;
+import java.nio.charset.Charset;
 /**
  * Write a description of class DataManagement here.
  * 
@@ -7,27 +10,36 @@
  */
 public class DataManagement
 {
-    // instance variables - replace the example below with your own
-    private int x;
 
-    /**
-     * Constructor for objects of class DataManagement
-     */
     public DataManagement()
     {
-        // initialise instance variables
-        x = 0;
+
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public static boolean saveData(Object data, String filename){
+        try{
+            PrintWriter writer = new PrintWriter(/*System.getProperty("user.dir") +*/ filename, "UTF-8");
+            writer.println(data.toString());
+            writer.close();
+            return true;
+        } catch (IOException e) {
+            return false;
+        }
+    }
+    
+    
+    public static <T> T readData(String filename){
+        
+        try{
+            Charset charset = Charset.forName("ISO-8859-1");
+            List<String> in = Files.readAllLines(Paths.get(System.getProperty("user.dir") , filename), charset);
+            String out = "";
+            for(String s : in){
+                out += s;
+            }
+            return (T) out;
+        } catch (IOException e) {
+            return null;
+        }
     }
 }
